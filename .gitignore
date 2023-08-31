@@ -1,0 +1,41 @@
+# local copy of the data
+data.json
+
+# ignore tmp file
+*tmp*
+*temp*
+
+# basic
+*.swp
+.DS_Store
+.gdb_history
+peda-session-*
+objdump
+*.dump
+.vscode
+node_modules
+
+# python related
+*.pyc
+__pycache__
+*.sage.py
+
+# Java realated
+*.class
+
+malwares/*
+
+# ghidra related
+*.rep
+*.gpr
+# binary ninja
+*.bndb
+# ida
+*.idb
+*.i64
+*.id0
+*.id1
+*.id2
+*.til
+*.nam
+*.idc

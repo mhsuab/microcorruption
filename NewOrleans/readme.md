@@ -12,7 +12,7 @@ The program asks for password and unlocks the door if the password is correct.
     char *password = create_password();
     puts("Enter the password to continue");
     char *input = get_password();
-    if (check_password(password, input)) {
+    if (check_password(input)) {
       puts("Access Granted!");
       unlock_door();
     } else {
@@ -24,10 +24,11 @@ The program asks for password and unlocks the door if the password is correct.
 
 </details>
 
+## Dive into `<create_password>` and `<check_password>`
+For both of the function, the `password` is stored at and used from a fixed address `0x2400`.
+
 
 ## Solution
-Therefore, break after the call to `<create_password>`, `@ 4440`,  and check the value of `r15` to get the password.
-
-Alternatively, break at `<check_password>` and check `r14` (to get the real password).
+Therefore, break after the call to `<create_password>`, `@ 4440`, and check the value at `0x2400` to get the password.
 
 <!-- solution: {'level_id': 2, 'input': '40674f5d256e37;'} -->

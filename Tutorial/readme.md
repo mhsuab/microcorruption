@@ -1,11 +1,11 @@
 # Tutorial
 > Follow the tutorial to get familiar with the interface and the assembly language.
 
-The program ask for password and unlock the door if the password is correct.
+The program asks for password and unlocks the door if the password is correct.
 
-Check the password with function, `check_password` @ 4484 and it takes the password as an argument.
+Check the password with function, `<check_password> @ 4484` and it takes the password as an argument.
 
-```x86asm
+```asm
 4484 <check_password>
 4484:  6e4f           mov.b	@r15, r14
 4486:  1f53           inc	r15
@@ -23,7 +23,7 @@ Check the password with function, `check_password` @ 4484 and it takes the passw
 From the [ABI](https://www.ti.com/lit/an/slaa534a/slaa534a.pdf), the first argument and the return value are both in `r15`.
 
 Manually decompile the assembly code to C code.
-- pseudo c code
+- **pseudo c code**
     ```c
     int check_password(char *password) {
         int len = 0, idx = 0;

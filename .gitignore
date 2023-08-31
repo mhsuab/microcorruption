@@ -1,5 +1,6 @@
 # local copy of the data
 data.json
+solve
 
 # ignore tmp file
 *tmp*

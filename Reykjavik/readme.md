@@ -84,4 +84,6 @@ Important segment in fucntion @ `0x2400`:
 Program gets the input from to the buffer `r15` pointed to and compare the **first 2 bytes of the input with `0xb57f`**.
 If the comparison is true, it will trigger the unlock function.
 
+Therefore, any input that starts with `[hex] 7f b5` will unlock the door.
+
 <!-- solution: {'level_id': 6, 'input': '7fb5;'} -->

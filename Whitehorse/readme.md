@@ -38,7 +38,7 @@ Originally, in the problem [`Cusoc`](../Cusco/readme.md), we can just overwrite 
 
 **But**, we know that the value to decide what the interrupt is going to do is by the value register `sp` pointing to. Therefore, we need to put `0x7f` on to the stack.
 
-#### Target Stack Layout
+#### Stack Layout
 |             |   `gets(sp, 0x30)`   |       `0x452e`       |
 | :---------: | :------------------: | :------------------: |
 |    `sp`     |      (padding)       | **(return address)** |
@@ -53,7 +53,7 @@ Originally, in the problem [`Cusoc`](../Cusco/readme.md), we can just overwrite 
 | `sp + 0x12` |        `0x7f`        |      (garbage)       |
 | `sp + 0x14` |      (garbage)       |      (garbage)       |
 
-and the `sp` here should be `input[0x10]` because the stack size is `0x10` bytes (also, the previous instruction, `add #0x10, sp`).
+> The `sp @ 452e` should be `input[0x10]` because the stack size is `0x10` bytes (also, the previous instruction, `add #0x10, sp`).
 
 The return address can be overwritten with any address that `call <INT>`.
 

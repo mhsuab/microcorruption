@@ -1,5 +1,6 @@
 # Santa Cruz
-> partial source code is [here](./dump.asm)
+> partial source code is [here](./dump.asm)  
+> **Vulnerability**: stack buffer overflow
 
 Program will ask for a username and password. If the password is correct, it will unlock the door.
 

@@ -33,4 +33,9 @@
     2. [Whitehorse](./Whitehorse)
     3. [Montevideo](./Montevideo)
     4. [Johannesburg](./Johannesburg)
+    5. [Santa Cruz](./SantaCruz)
+    6. [Jakarta](./Jakarta)
+- Arithmetic
+    1. [Jakarta](./Jakarta)
 - Format String Vulnerability
+    1. [Addis Ababa](./AddisAbaba)

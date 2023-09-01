@@ -21,7 +21,7 @@
 4596:  3e40 0424      mov	#0x2404, r14
 459a:  0f44           mov	r4, r15
 459c:  3f50 d6ff      add	#0xffd6, r15
-45a0:  b012 5447      call	#0x4754 <strcpy>    ; strcpy(0x2404, r4 - 42 = sp + 2)
+45a0:  b012 5447      call	#0x4754 <strcpy>    ; strcpy(r4 - 42 = sp + 2, 0x2404)
 45a4:  3f40 0545      mov	#0x4505 "Please enter your password:", r15
 45a8:  b012 2847      call	#0x4728 <puts>
 45ac:  3e40 6300      mov	#0x63, r14
@@ -33,7 +33,7 @@
 45c2:  3b50 e9ff      add	#0xffe9, r11        ; r11 = r4 - 23 = sp + 21
 45c6:  3e40 0424      mov	#0x2404, r14
 45ca:  0f4b           mov	r11, r15
-45cc:  b012 5447      call	#0x4754 <strcpy>    ; strcpy(0x2404, r4 - 23 = sp + 21)
+45cc:  b012 5447      call	#0x4754 <strcpy>    ; strcpy(r4 - 23 = sp + 21, 0x2404)
 45d0:  0f4b           mov	r11, r15            ; r15 = sp + 21
 45d2:  0e44           mov	r4, r14             ; r14 = r4
 45d4:  3e50 e8ff      add	#0xffe8, r14        ; r14 = r4 - 24 = sp + 20

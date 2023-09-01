@@ -26,3 +26,10 @@
 23. [ ] [Baku](./Baku/readme.md)
 24. [ ] [St. John's](./StJohns/readme.md)
 25. [ ] [Halifax](./Halifax/readme.md)
+
+### Serial
+- Stack Buffer Overflow
+    1. [Cusco](./Cusco)
+    2. [Whitehorse](./Whitehorse)
+    3. [Montevideo](./Montevideo)
+- Format String Vulnerability

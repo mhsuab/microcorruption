@@ -39,3 +39,4 @@
     1. [Jakarta](./Jakarta)
 - Format String Vulnerability
     1. [Addis Ababa](./AddisAbaba)
+    2. [Novosibirsk](./Novosibirsk)

@@ -56,32 +56,32 @@
 4502:  0f43           clr	r15
 4504:  3b41           pop	r11
 4506:  3041           ret
-4508 <free>     ; free(r15 = ptr + 6)
+4508 <free> ; free(r15 = payload)
 4508:  0b12           push	r11
-450a:  3f50 faff      add	#0xfffa, r15            ; r15 = ptr
+450a:  3f50 faff      add	#0xfffa, r15            ; r15 = payload - 6 = ptr
 450e:  1d4f 0400      mov	0x4(r15), r13           ; r13 = ptr->size
-4512:  3df0 feff      and	#0xfffe, r13            ; r13 = ptr->size & b11...1110, r13 = size w/o flags
-4516:  8f4d 0400      mov	r13, 0x4(r15)           ; ptr->size = size
-451a:  2e4f           mov	@r15, r14               ; r14 = [ptr] = ptr->prev
-451c:  1c4e 0400      mov	0x4(r14), r12           ; r12 = ptr->prev->size
-4520:  1cb3           bit	#0x1, r12
-4522:  0d20           jnz	$+0x1c <free+0x36>      ; if (r2 & 0x1) goto 453e
-4524:  3c50 0600      add	#0x6, r12
-4528:  0c5d           add	r13, r12
-452a:  8e4c 0400      mov	r12, 0x4(r14)
-452e:  9e4f 0200 0200 mov	0x2(r15), 0x2(r14)
-4534:  1d4f 0200      mov	0x2(r15), r13           ; r13 = ptr->next
-4538:  8d4e 0000      mov	r14, 0x0(r13)           ; ptr->next->prev = ptr->prev
-453c:  2f4f           mov	@r15, r15
-453e:  1e4f 0200      mov	0x2(r15), r14           ; r14 = ptr->next
-4542:  1d4e 0400      mov	0x4(r14), r13           ; r13 = ptr->next->size
-4546:  1db3           bit	#0x1, r13
-4548:  0b20           jnz	$+0x18 <free+0x58>      ; if (r13 & 0x1) goto 4560
-454a:  1d5f 0400      add	0x4(r15), r13           ; r13 = r13 + ptr->size = ptr->next->size + ptr->size
-454e:  3d50 0600      add	#0x6, r13               ; r13 += 6
-4552:  8f4d 0400      mov	r13, 0x4(r15)           ; ptr->size = r13
-4556:  9f4e 0200 0200 mov	0x2(r14), 0x2(r15)      ; ptr->next = ptr->next->next
-455c:  8e4f 0000      mov	r15, 0x0(r14)           ; [ptr->next] = ptr
+4512:  3df0 feff      and	#0xfffe, r13            ; r13 = size = ptr->size & 0xfffe
+4516:  8f4d 0400      mov	r13, 0x4(r15)           ; ptr->size = size = r13
+451a:  2e4f           mov	@r15, r14               ; r14 = ptr->bk = bk
+451c:  1c4e 0400      mov	0x4(r14), r12           ; r12 = bk->size
+4520:  1cb3           bit	#0x1, r12               ; if (bk->size & 0x1)
+4522:  0d20           jnz	$+0x1c <free+0x36>      ; if not zero goto 453e
+    4524:  3c50 0600      add	#0x6, r12               ; r12 = bk->size + 6
+    4528:  0c5d           add	r13, r12                ; r12 = bk->size + 6 + size
+    452a:  8e4c 0400      mov	r12, 0x4(r14)           ; bk->size = r12
+    452e:  9e4f 0200 0200 mov	0x2(r15), 0x2(r14)      ; bk->fd = ptr->fd
+    4534:  1d4f 0200      mov	0x2(r15), r13           ; r13 = fd = ptr->fd
+    4538:  8d4e 0000      mov	r14, 0x0(r13)           ; fd->bk = bk
+    453c:  2f4f           mov	@r15, r15               ; r15 = ptr = ptr->bk
+453e:  1e4f 0200      mov	0x2(r15), r14           ; r14 = fd = ptr->fd
+4542:  1d4e 0400      mov	0x4(r14), r13           ; r13 = fd->size
+4546:  1db3           bit	#0x1, r13               ; if (fd->size & 0x1)
+4548:  0b20           jnz	$+0x18 <free+0x58>      ; if not zero goto 4560
+    454a:  1d5f 0400      add	0x4(r15), r13           ; r13 += ptr->size ~> r13 = fd->size + ptr->size
+    454e:  3d50 0600      add	#0x6, r13               ; r13 += 6 ~> r13 = fd->size + ptr->size + 6
+    4552:  8f4d 0400      mov	r13, 0x4(r15)           ; ptr->size = r13
+    4556:  9f4e 0200 0200 mov	0x2(r14), 0x2(r15)      ; ptr->fd = fd->fd
+    455c:  8e4f 0000      mov	r15, 0x0(r14)           ; fd->bk = ptr
 4560:  3b41           pop	r11
 4562:  3041           ret
 463a <login>

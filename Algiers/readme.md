@@ -113,10 +113,10 @@ void *free(void *payload) {
     // goto 4524
     prev_size += 6;
     prev_size += ptr->size;
-    ptr->size = prev_size;
+    bk->size = prev_size;
     bk->fd = ptr->fd;
-    ptr->fd = bk;
-    ptr = ptr->bk;
+    ptr->fd->bk = bk;
+    ptr = bk;
   }
   // goto 453e
   struct chunk *fd = ptr->fd;
@@ -162,10 +162,9 @@ void *free(void *payload) {
     // goto 4524
     bk->size += 6;
     bk->size += ptr->size;
-    ptr->size = bk->size;
     bk->fd = ptr->fd;
-    ptr->fd = bk;
-    ptr = ptr->bk;
+    ptr->fd->bk = bk;
+    ptr = bk;
   }
   // goto 453e
   struct chunk *fd = ptr->fd;
@@ -174,7 +173,6 @@ void *free(void *payload) {
     // goto 454a
     ptr->size += fd->size;
     ptr->size += 6;
-    fd->size = ptr->size;
     ptr->fd = fd->fd;
     fd->bk = ptr;
   }

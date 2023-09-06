@@ -93,6 +93,21 @@ From the [assmebly](./dump.asm), we can find multiple places where it calls the 
 
 Therefore, `password` should be `8` bytes of padding + return address, `0x48ea` after rebase + `2` bytes of padding + `0x7f`.
 
+### Trick for still able to view execution in **Disassembly**
+Since on the [microcorruption](https://microcorruption.com/) website, we will only be able to view the execution in the disassembly window when the executed instruction is **originally disassembled**. Therefore, with all the *aslr* and *rebasing*, we will not be able to view the execution in the disassembly window. So, I did a simple trick to make it work.
+
+1. set **1st breakpoint** at `0x4476` which is in `<main>` right before the call to `<aslr_main>`
+2. set the **2nd breakpoint** at `0x4494`, which is in `<_aslr_main>`, at the beginning of the *loop* for nulling out the original text section
+3. run the program and wait for the **1st breakpoint** to hit
+4. modify the value for `r13` and `r15`
+   - `r13` is the function pointer for `<aslr_main>`
+        - `let r13 = 0x475c`
+   - `r15` is the argument for `<aslr_main>`, which is the base address
+        - `let r15 = 0x4400`
+5. continue the program and wait for the **2nd breakpoint** to hit 
+6. modify the value for `pc` from `0x4494` to `0x44a0` and start debugging/analyzing the program as normal
+    - The modification of `pc` is to skip the nulling out of the original text section s.t. the program can still be executed as intended
+
 ## Exploit
 <details>
 <summary>Simple script transfer to *hex*</summary>

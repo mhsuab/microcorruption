@@ -15,7 +15,7 @@
 12. [X] [Addis Ababa](./AddisAbaba/readme.md)
 13. [X] [Novosibirsk](./Novosibirsk/readme.md)
 14. [X] [Algiers](./Algiers/readme.md)
-15. [ ] [Vladivostok](./Vladivostok/readme.md)
+15. [X] [Vladivostok](./Vladivostok/readme.md)
 16. [ ] [Bangalore](./Bangalore/readme.md)
 17. [ ] [Lagos](./Lagos/readme.md)
 18. [ ] [Chernobyl](./Chernobyl/readme.md)
@@ -27,18 +27,26 @@
 24. [ ] [St. John's](./StJohns/readme.md)
 25. [ ] [Halifax](./Halifax/readme.md)
 
-### Serial
-- Stack Buffer Overflow
-    1. [Cusco](./Cusco)
-    2. [Whitehorse](./Whitehorse)
-    3. [Montevideo](./Montevideo)
-    4. [Johannesburg](./Johannesburg)
-    5. [Santa Cruz](./SantaCruz)
-    6. [Jakarta](./Jakarta)
-- Arithmetic
-    1. [Jakarta](./Jakarta)
-- Format String Vulnerability
-    1. [Addis Ababa](./AddisAbaba)
-    2. [Novosibirsk](./Novosibirsk)
-- Heap Buffer Overflow
-    1. [Algiers](./Algiers)
+### Categories
+- Vulnerabilities
+    - Stack Buffer Overflow
+        1. [Cusco](./Cusco)
+        2. [Whitehorse](./Whitehorse)
+        3. [Montevideo](./Montevideo)
+        4. [Johannesburg](./Johannesburg)
+        5. [Santa Cruz](./SantaCruz)
+        6. [Jakarta](./Jakarta)
+        7. [Vladivostok](./Vladivostok)
+    - Arithmetic
+        1. [Jakarta](./Jakarta)
+    - Format String Vulnerability
+        1. [Addis Ababa](./AddisAbaba)
+        2. [Novosibirsk](./Novosibirsk)
+        3. [Vladivostok](./Vladivostok)
+    - Heap Buffer Overflow
+        1. [Algiers](./Algiers)
+- Mitigations
+    - Stack Canary
+        1. [Johannesburg](./Johannesburg)
+    - ASLR
+        1. [Vladivostok](./Vladivostok)

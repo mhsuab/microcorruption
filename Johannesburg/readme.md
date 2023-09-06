@@ -1,6 +1,7 @@
 # Johannesburg
 > **Vulnerability**: stack buffer overflow  
-> similar to [Montevideo](../Montevideo/readme.md)
+> **Mitigation**: stack canary  
+> similar to [Montevideo](../Montevideo/readme.md)  
 
 ## Analysis
 ### What is different from [Montevideo](../Montevideo)?

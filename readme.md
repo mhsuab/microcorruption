@@ -16,7 +16,7 @@
 13. [X] [Novosibirsk](./Novosibirsk/readme.md)
 14. [X] [Algiers](./Algiers/readme.md)
 15. [X] [Vladivostok](./Vladivostok/readme.md)
-16. [ ] [Bangalore](./Bangalore/readme.md)
+16. [X] [Bangalore](./Bangalore/readme.md)
 17. [ ] [Lagos](./Lagos/readme.md)
 18. [ ] [Chernobyl](./Chernobyl/readme.md)
 19. [ ] [Hollywood](./Hollywood/readme.md)
@@ -50,3 +50,5 @@
         1. [Johannesburg](./Johannesburg)
     - ASLR
         1. [Vladivostok](./Vladivostok)
+    - DEP
+        1. [Bangalore](./Bangalore)

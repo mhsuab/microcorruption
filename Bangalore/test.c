@@ -2,11 +2,11 @@
 #include <stdio.h>
 
 void mark_page_executable(int page) {
-    printf("x: 0x%x\n", page * 256);
+    printf("x:\t%d\t\t0x%x\n", page, page * 256);
 }
 
 void mark_page_writable(int page) {
-    printf("w: 0x%x\n", page * 256);
+    printf("w:\t%d\t\t0x%x\n", page, page * 256);
 }
 
 void set_up_protection() {
@@ -21,6 +21,7 @@ void set_up_protection() {
 }
 
 int main() {
+    printf("rwx\tpage\taddress\n");
     set_up_protection();
     return 0;
 }

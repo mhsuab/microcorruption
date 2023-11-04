@@ -33,6 +33,6 @@ From `4500:  3150 f0ff      add	#0xfff0, sp`, we know that the stack size is `0x
 **<u>0x30 > 0x10</u>** so there is a **stack buffer overflow** and `input[0x10]` will hold the return address of the function `<login>`.
 
 ## Exploit
-0x10 bytes of padding + 0x2 bytes of address for `<unlock_door>` function, `0x4644` in little endian
+0x10 bytes of padding + 0x2 bytes of address for `<unlock_door>` function, `0x4446` in little endian
 
 <!-- solution: {'level_id': 5, 'input': '414141414141414141414141414141414644;'} -->

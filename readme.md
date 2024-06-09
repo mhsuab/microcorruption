@@ -17,7 +17,7 @@
 14. [X] [Algiers](./Algiers/readme.md)
 15. [X] [Vladivostok](./Vladivostok/readme.md)
 16. [X] [Bangalore](./Bangalore/readme.md)
-17. [ ] [Lagos](./Lagos/readme.md)
+17. [X] [Lagos](./Lagos/readme.md)
 18. [ ] [Chernobyl](./Chernobyl/readme.md)
 19. [ ] [Hollywood](./Hollywood/readme.md)
 20. [ ] [Vancouver](./Vancouver/readme.md)
@@ -37,6 +37,7 @@
         5. [Santa Cruz](./SantaCruz)
         6. [Jakarta](./Jakarta)
         7. [Vladivostok](./Vladivostok)
+        8. [Lagos](./Lagos)
     - Arithmetic
         1. [Jakarta](./Jakarta)
     - Format String Vulnerability

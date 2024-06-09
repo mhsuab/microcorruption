@@ -76,16 +76,16 @@
 45a0:  0b41           mov	sp, r11
 45a2:  0b5e           add	r14, r11
 45a4:  cb4f 0000      mov.b	r15, 0x0(r11)
-45a8:  5f4e 0024      mov.b	0x2400(r14), r15        ; r15 = password[i]
+45a8:  5f4e 0024      mov.b	0x2400(r14), r15        ; r15 = input[i]
 45ac:  1e53           inc	r14                     ; i++
-45ae:  4b4f           mov.b	r15, r11                ; r11 = password[i]
+45ae:  4b4f           mov.b	r15, r11                ; r11 = input[i]
 45b0:  7b50 d0ff      add.b	#0xffd0, r11            ; r11 -= 0x30 (= '0')
 45b4:  4c9b           cmp.b	r11, r12                ; if (r11 < 0x9)
 45b6:  f42f           jc	$-0x16 <login+0x42>     ; goto 45a0
-45b8:  7b50 efff      add.b	#0xffef, r11            ; r11 = password[i] - 0x30 - 17 (= 'A')
+45b8:  7b50 efff      add.b	#0xffef, r11            ; r11 = input[i] - 0x30 - 17 (= 'A')
 45bc:  4d9b           cmp.b	r11, r13                ; if (r11 < 25)
 45be:  f02f           jc	$-0x1e <login+0x42>
-45c0:  7b50 e0ff      add.b	#0xffe0, r11            ; r11 = password[i] - 'a'
+45c0:  7b50 e0ff      add.b	#0xffe0, r11            ; r11 = input[i] - 'a'
 45c4:  4d9b           cmp.b	r11, r13                ; if (r11 < 25)
 45c6:  ec2f           jc	$-0x26 <login+0x42>     ; goto 45a0
 45c8:  c143 0000      mov.b	#0x0, 0x0(sp)

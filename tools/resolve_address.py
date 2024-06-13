@@ -1,6 +1,6 @@
 import parse, sys
 
-function = parse.compile('{addr:x} <{func:w}>')
+function = parse.compile('{addr:x} <{func:w}>\n')
 jcc = parse.compile('{:w}\t${}<{:w}+{:x}>')
 
 with open(sys.argv[1], 'r') as fd:
@@ -9,7 +9,7 @@ with open(sys.argv[1], 'r') as fd:
 func_addr = {
     parsed['func']: parsed['addr']
         for line in asm
-    if (parsed := function.search(line)) is not None
+    if (parsed := function.parse(line)) is not None
 }
 
 for i in range(len(asm)):

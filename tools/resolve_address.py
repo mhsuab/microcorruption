@@ -6,6 +6,9 @@ jcc = parse.compile('{:w}\t${}<{:w}+{:x}>')
 with open(sys.argv[1], 'r') as fd:
     asm = fd.readlines()
 
+with open(sys.argv[1] + '.bak', 'w') as fd:
+    fd.write('\n'.join(asm))
+
 func_addr = {
     parsed['func']: parsed['addr']
         for line in asm

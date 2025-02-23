@@ -31,6 +31,7 @@ typedef struct heap_state {
   bool top_chunk_need_init;
 } heap_state_t;
 
+// 2400: 0050 0080 0100 0000 0000 0000 0000 0000
 heap_state_t HEAP_STATE = {
   .top_chunk = 0x5000,
   .size = 0x8000,
@@ -105,7 +106,7 @@ void free(void* payload) {
 }
 ```
 
-### `walk` @ [here](./../Chernobyl/dump.asm#196)
+### `walk` @ [here](./../18_Chernobyl/dump.asm#196)
 
 ```c
 void walk(chunk_t *chunk) {

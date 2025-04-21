@@ -15,6 +15,7 @@ objdump
 *.dump
 .vscode
 node_modules
+*.bak
 
 # python related
 *.pyc

@@ -1,0 +1,3 @@
+[submodule "tools/cfg-assemblyish"]
+	path = tools/cfg-assemblyish
+	url = git@github.com:mhsuab/cfg-assemblyish.git
